@@ -6,8 +6,8 @@ SLLM은 Smaller Large Language Model의 약자로 큰 언어 모델(Large Langua
 
 # 3. Dataset
 데이터셋은 AIHub, Kisti에서 제공한 데이터셋을 사용하며 Instruction Tuning을 위하여 SuperNI(https://github.com/allenai/natural-instructions) 에 정의된 Task를 참고하여 가능한 22개의 Task Dataset으로 Reformatting을 진행하였습니다. 데이터셋을 전부 공개하지 못하여 sample_data 폴더 안에 Task 별 예제 데이터를 업로드하였습니다. 또한 자연어 생성의 자연스러움을 위하여 k_rlhf, every_lm, evolve_instr 데이터셋을 일부 추가하여 학습을 진행하였습니다. 데이터셋별 대략적인 개수는 아래와 같습니다.
-- AIHUB, KISTI :
-- k_rlhf, every_lm, evolve_instr :
+- AIHUB, KISTI : 100,000 samples
+- k_rlhf, every_lm, evolve_instr : 50,000 samples
   
 Reformatted Task의 대한 설명은 아래와 같습니다.
 
