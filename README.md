@@ -6,12 +6,13 @@ SLLM은 Smaller Large Language Model의 약자로 큰 언어 모델(Large Langua
 - 2024.06.17 : Upstage SOLAR10.7B 사전학습 가중치를 이용한 Instruction Tuning 완료   
 "Enkeeper/SOLAR_10.7B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
 
-# 3. Dataset
+# 3. Dataset & Dependency
+### Dataset
 데이터셋은 AIHub, Kisti에서 제공한 데이터셋을 사용하며 Instruction Tuning을 위하여 SuperNI(https://github.com/allenai/natural-instructions) 에 정의된 Task를 참고하여 가능한 22개의 Task Dataset으로 Reformatting을 진행하였습니다. 데이터셋을 전부 공개하지 못하여 sample_data 폴더 안에 Task 별 예제 데이터를 업로드하였습니다. 또한 자연어 생성의 자연스러움을 위하여 k_rlhf, every_lm, evolve_instr 데이터셋을 일부 추가하여 학습을 진행하였습니다. 데이터셋별 대략적인 개수는 아래와 같습니다.
 - AIHUB, KISTI : 100,000 samples
 - k_rlhf, every_lm, evolve_instr : 50,000 samples
   
-Reformatted Task의 대한 설명은 아래와 같습니다.
+GPT를 이용하여 Task별 100개의 Instruction을 생성 후 Instsruction을 Task별로 랜덤하게 적용하였습니다. Reformatted Task의 대한 설명은 아래와 같습니다.
 
 |Task Name|Description|
 |------|-------|
@@ -37,6 +38,8 @@ Reformatted Task의 대한 설명은 아래와 같습니다.
 |Abstractive QA Yes or No|질문이 주어지면 질문에 맞는 답을 예, 아니오로 생성|
 |Extractive QA Objective Explanation|질문이 주어지면 질문에 맞는 답 주어진 보기에서 선택 후 참고 텍스트에서 정답의 근거를 함께 제시|
 |Extractive QA Yes or No Explanation|질문이 주어지면 질문에 맞는 답을 예, 아니오로 생성하고 참고 텍스트에서 정답의 근거를 함께 제시|
+### Dependency
+학습은 unsloth를 기반으로 수행됩니다. https://github.com/unslothai/unsloth 링크를 참고하여 unsloth 라이브러리를 설치하여주세요. 나머지 dependency는 requirements.txt를 참고하여 설치하여 주시기 바랍니다.
 
 # 4. Train
 먼저 config.json 파일을 만들어야 합니다. make_train_config.ipynb와 config 폴더 안에 있는 예시 config 파일을 참고하여 config 파일을 만들어주세요. 학습 구현은 unsloth 프레임워크 (https://github.com/unslothai/unsloth) 을 기반으로 합니다. unsloth는 LoRA fine-tuning에 대하여 빠른 학습 속도와 좋은 GPU 메모리 효율을 보여줍니다. 또한 다양한 Open Foundation 모델을 학습할 수 있습니다. 따라서 이 구현에서의 모든 모델은 LoRA Fine-Tuning을 수행합니다. 학습 또는 추론에 사용 할 특정 GPU의 선택을 원하지 않는 경우 코드에서 os.environ["CUDA_VISIBLE_DEVICES"]="1"를 주석처리 해주세요.
