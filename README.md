@@ -93,4 +93,8 @@ model.save_pretrained_merged('folder_path', tokenizer, save_method="lora")
 보다 자세한 내용은 inference.ipynb와 vLLM_offline_inference.ipynb 파일을 참고해주세요
 
 # 7. Zero-Shot Performance
-구현 예정
+### Zero-Shot이란?
+Zero-Shot은 쉽게 말하면 "모델이 학습 과정에서 배우지 않은 작업을 수행하는 것"을 의미합니다. sLLM 기반의 Instruction Tuned 모델은 학습 과정에서 배우지 않는 태스크에 대한 설명을 제공하면 태스크를 자연어를 통해 이해하여 Zero-Shot Inference 일정 수준 충족할 수 있습니다.
+### Evaluation Dataset
+모델의 Zero-Shot 능력을 정량적으로 평가하기 위해 분류 태스크를 활용합니다. 4개의 데이터셋을 사용하여 평가를 진행하며 이 데이터셋은 학습 과정에서 전혀 사용하지 않은 데이터셋입니다. 각 모델별 데이터셋에 대한 F1-Score로 모델 성능을 비교합니다.
+Zero-Shot Dataset의 설명은 아래와 같습니다.
