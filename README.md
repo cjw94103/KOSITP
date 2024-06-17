@@ -98,3 +98,12 @@ Zero-Shot은 쉽게 말하면 "모델이 학습 과정에서 배우지 않은 �
 ### Evaluation Dataset
 모델의 Zero-Shot 능력을 정량적으로 평가하기 위해 분류 태스크를 활용합니다. 4개의 데이터셋을 사용하여 평가를 진행하며 이 데이터셋은 학습 과정에서 전혀 사용하지 않은 데이터셋입니다. 각 모델별 데이터셋에 대한 F1-Score로 모델 성능을 비교합니다.
 Zero-Shot Dataset의 설명은 아래와 같습니다.
+- KorNLI : 한국어로 구성된 Natural Language Inference 태스크로써 클래스는 entailment, neutral, contradiction으로 표시됩니다. (https://github.com/kakaobrain/kor-nlu-datasets)
+- KorQuestionPair : 한국어로 구성된 두 개의 문장에 대하여 유사성을 평가하는 태스크로써 클래스는 두 문장이 같을 경우 0, 같지 않을 경우 1로 표시됩니다. (https://github.com/songys/Question_pair)
+- KoreaHateSpeech : 한국어로 구성된 사회적 편견 및 혐오 표현을 탐지하는 태스크로써 여기서는 사회적 편견의 유무에 대한 태스크를 수행합니다. 사회적 편견이 있는 경우 1, 없는 경우 0으로 표시됩니다. (https://github.com/songys/Question_pair)
+- NSMC : 한국어로 구성된 영화 리뷰 데이터셋이며 긍정, 부정의 레이블이 존재합니다. (https://github.com/e9t/nsmc)
+
+모델에게 태스크 이해를 위한 시스템 프롬프트는 최소한으로 입력하여 각 모델별, 데이터셋별 Average F1-Score를 산출합니다. 성능은 아래와 같습니다.
+|모델|KorNLI|KorQuestionPair|KoreaHateSpeech|NSMC|
+|------|---|---|---|---|
+|SOLAR 10.7B TaskInstruct|0.44|0.68|0.63|0.76|
