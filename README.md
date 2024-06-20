@@ -5,7 +5,7 @@ SLLM은 Smaller Large Language Model의 약자로 큰 언어 모델(Large Langua
 # 2. Update History
 - 2024.06.17 : Upstage SOLAR10.7B 사전학습 가중치를 이용한 Instruction Tuning 완료   
 "Enkeeper/SOLAR_10.7B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
-- 2024.06.20 : Mistral 7B 사전학습 가중치를 이용한 Instruction Tuning 완료
+- 2024.06.20 : Mistral 7B 사전학습 가중치를 이용한 Instruction Tuning 완료   
 "Enkeeper/Mistral_7B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
 
 # 3. Dataset & Dependency
