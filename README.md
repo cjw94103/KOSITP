@@ -109,4 +109,4 @@ Zero-Shot Dataset의 설명은 아래와 같습니다.
 |모델|KorNLI|KorQuestionPair|KoreaHateSpeech|NSMC|
 |------|---|---|---|---|
 |SOLAR 10.7B TaskInstruct|0.44|0.68|0.63|0.76|
-|Mistral 7B TaskInstruct|0.30|0.50|0.34|0.76|
+|Mistral 7B TaskInstruct|0.31|0.51|0.41|0.77|
