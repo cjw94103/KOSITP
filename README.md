@@ -7,6 +7,8 @@ SLLM은 Smaller Large Language Model의 약자로 큰 언어 모델(Large Langua
 "Enkeeper/SOLAR_10.7B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
 - 2024.06.20 : Mistral 7B 사전학습 가중치를 이용한 Instruction Tuning 완료   
 "Enkeeper/Mistral_7B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
+- 2024.06.28 : Gemma 2B 사전학습 가중치를 이용한 Instruction Tuning 완료   
+"Enkeeper/Gemma_2B_TaskInstruct_Unsloth_LORA"를 입력하여 학습된 모델을 사용해 보실 수 있습니다.^^
 
 # 3. Dataset & Dependency
 ### Dataset
@@ -110,3 +112,4 @@ Zero-Shot Dataset의 설명은 아래와 같습니다.
 |------|---|---|---|---|
 |SOLAR 10.7B TaskInstruct|0.44|0.68|0.63|0.76|
 |Mistral 7B TaskInstruct|0.31|0.51|0.41|0.77|
+|Gemma 2B TaskInstruct|0.30|0.45|0.49|0.65|
